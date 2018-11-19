@@ -1,0 +1,23 @@
+<div id="signupbox" style=" margin-top:50px; margin-left:30px" class="">
+  <h2>Personajes Start works</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">birth_year</th>
+        <th scope="col">gender</th>
+        <th scope="col">homeworld</th>
+        <th scope="col">url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let personaje of personajes" (click)="onSelect(personaje)">
+        <td>{{personaje.name}}</td>
+        <td>{{personaje.birth_year}}</td>
+        <td>{{personaje.gender}}</td>
+        <td>{{personaje.homeworld}}</td>
+        <td>{{personaje.url}}</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>

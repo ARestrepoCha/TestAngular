@@ -1,0 +1,57 @@
+<div id="signupbox" style=" margin-top:50px; margin-left:30px" class="">
+  <div class="card card-info">
+    <div class="card-header">
+      <div class="card-title">Registro de usuario</div>
+    </div>
+    <div class="card-body">
+      <form class="form-horizontal" #f="ngForm" (ngSubmit)="registrarUsuario(f)">
+        <div class="form-group required">
+          <label for="nombre" class="control-label col-6 requiredField">Nombre</label>
+          <div class="controls col-12">
+            <input type="text" class="input-md textinput form-control" id="nombre" placeholder="Nombres" name="nombre" required [(ngModel)]="usuario.nombre">
+          </div>
+        </div>
+        <div class="form-group required">
+          <label for="apellido" class="control-label col-md-6 requiredField">Apellido</label>
+          <div class="controls col-md-12">
+            <input type="text" class="input-md textinput textInput form-control" id="apellido" placeholder="Apellidos" name="apellido" required [(ngModel)]="usuario.apellido">
+          </div>
+        </div>
+        <div class="form-group required">          
+            <label for="tipoDocumento" class="control-label col-6">Tipo documento</label>
+            <div class="controls col-md-12">
+              <select id="tipoDocumento" class="hideLabel form-control" [(ngModel)]="usuario.tipoDocumento" name="tipoDocumento" (change)="selectName();">                
+                <option [ngValue]="tipo.tipoDocumento" *ngFor="let tipo of data">
+                  {{tipo.nombre}}
+                </option>
+              </select>
+            </div>          
+        </div>
+        <div class="form-group required">
+          <label for="numeroDocumento" class="control-label col-6">N&uacute;mero de documento</label>
+          <div class="controls col-12">
+            <input type="number" class="input-md textinput form-control" id="numeroDocumento" placeholder="Número documento" name="numeroDocumento" required [(ngModel)]="usuario.numeroDocumento">
+          </div>
+        </div>
+        <div class="form-group required">
+          <label for="correo" class="control-label col-md-6 requiredField">Correo</label>
+          <div class="controls col-md-12">
+            <input type="email" class="input-md textinput textInput form-control" id="correo" placeholder="Correo" name="correo" required [(ngModel)]="usuario.correo">
+          </div>
+        </div>
+        <div class="form-group required">
+          <label for="telefono" class="control-label col-6">N&uacute;mero de documento</label>
+          <div class="controls col-12">
+            <input type="number" class="input-md textinput form-control" id="telefono" placeholder="telefono" name="telefono" required [(ngModel)]="usuario.telefono">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="aab controls col-md-4 "></div>
+          <div class="controls col-md-8 ">
+            <button type="submit" [disabled]="f.invalid" class="btn btn-primary btn btn-info">Registrarse</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
